@@ -1,14 +1,24 @@
-// Reactをインポートしてください
 import React from 'react';
 
-// Appクラスを定義してください
 class App extends React.Component {
-  render(){
+  constructor(props) {
+    super(props);
+    this.state = {name: 'にんじゃわんこ'};
+  }
+  
+  render() {
     return (
-      <h1>Hello React</h1>
+    	<div>
+    	  <h1>こんにちは、{this.state.name}さん！</h1>
+    	  {/* onClickの処理に、stateを変更する処理を加えてください */}
+        <button onClick={() => {this.setState ({name: 'ひつじ仙人'})}}>ひつじ仙人</button>
+        
+        {/* onClickの処理に、stateを変更する処理を加えてください */}
+        <button onClick={() => {this.setState ({name: 'にんじゃわんこ'})}}>にんじゃわんこ</button>
+        
+      </div>
     );
   }
 }
 
-// Appクラスをエクスポートしてください
 export default App;
